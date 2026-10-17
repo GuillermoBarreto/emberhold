@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emberhold — Browser RTS</title>
+    <meta name="description" content="Emberhold: an original fantasy real-time strategy game that runs in your browser." />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="world"></canvas>
+
+      <div id="topbar">
+        <span class="stat"><span class="ico">🪙</span><span id="gold-val">600</span></span>
+        <span class="stat"><span class="ico">⚔️</span><span id="cp-val">0/60</span></span>
+        <span class="stat"><span class="ico">⏱️</span><span id="timer-val">0:00</span></span>
+        <span class="spacer"></span>
+        <button id="mute-btn" title="Mute (M)">🔊</button>
+        <button id="restart-btn" title="Restart battle">↻</button>
+      </div>
+
+      <canvas id="minimap" width="220" height="138"></canvas>
+      <div id="alert" class="hidden"></div>
+      <div id="panel"></div>
+
+      <div id="start-screen" class="overlay">
+        <div class="card">
+          <h1>EMBERHOLD</h1>
+          <h2>An original fantasy real-time strategy game</h2>
+          <p>
+            The Ashen Horde marches on your fortress. Raise an army from your barracks,
+            archery ranges and stables, capture the gold mines scattered across the
+            riverlands, and raze the enemy fortress before yours falls.
+          </p>
+          <p>
+            Swordsmen counter lancers, lancers run down archers, and archers shred
+            swordsmen — scout the enemy, build the counter, and lead your Warden's
+            war-cry at the decisive moment.
+          </p>
+          <div class="controls-grid">
+            <span><b>Left-click / drag</b> — select units</span>
+            <span><b>Double-click</b> — select type on screen</span>
+            <span><b>Right-click</b> — move / attack</span>
+            <span><b>A + click</b> — attack-move</span>
+            <span><b>WASD / arrows / edges</b> — move camera</span>
+            <span><b>1 / 2 / 3</b> — build on selected plot</span>
+            <span><b>Q</b> — train unit at building</span>
+            <span><b>T</b> — Warden's war-cry</span>
+            <span><b>Esc</b> — deselect</span>
+            <span><b>M</b> — mute</span>
+          </div>
+          <button id="start-btn" class="big-btn">⚔ Start Battle</button>
+        </div>
+      </div>
+
+      <div id="end-screen" class="overlay hidden">
+        <div class="card">
+          <h1 id="end-title">Victory!</h1>
+          <p id="end-stats"></p>
+          <button id="again-btn" class="big-btn">↻ Play Again</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
